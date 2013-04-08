@@ -1,6 +1,6 @@
 "available flags
 let s:FLAGS=['k','r']
-let g:Join_debug = 1
+let g:Join_debug = 0
 
 "message dictionary
 let s:errMsgsDict                = {'err_arg_sep': '[JoinErr:ARG] Invalid Separator'}
@@ -11,14 +11,14 @@ let s:errMsgsDict['err_arg_cf']  = '[JoinErr:ARG] Argument Count or Flags is inv
 " Do the join logic here
 "------------------------------------
 fun! s:DoJoin(sep, bang, count, flag, first, last)
-    if g:Join_debug
+    if g:Join_debug"{{{
         echom '---------------------'
         echom 'parsed sep:'   . a:sep
         echom 'bang:'        . a:bang
         echom 'input count:' . a:count
         echom 'input flags'  . a:flag
         echom '---------------------'
-    endif
+    endif"}}}
     let cnt = a:count	
     
     "flags
@@ -28,31 +28,34 @@ fun! s:DoJoin(sep, bang, count, flag, first, last)
     if a:first == a:last
         let cnt = cnt == 0 ? 1 : cnt
         "a:first and a:last are same
-        let jbegin = cnt > 0 ? a:first : a:first + cnt 
-        let jend   = cnt > 0 ? a:first + cnt -1  : a:first
+        let jbegin = cnt > 0 ? a:first : a:first + ((cnt + 1)<0?cnt+1:cnt)
+        let jend   = cnt > 0 ? (cnt > 1 ? a:first + cnt - 1:a:first + cnt): a:first
     else " user inputed a range > 1 line
         if cnt == 0 "without count 
             let jbegin = a:first
             let jend   = a:last
         elseif cnt > 0 "with positive count
             let jbegin = a:last
-            let jend   = jbegin + cnt -1
+            let jend   = jbegin + (cnt==1?1:cnt -1)
         else " negative count !! could be confusing, need explain in doc 
             let jend   = a:first
-            let jbegin = (a:first + cnt )
-            let jbegin = jbegin < 0 ? 0 : jbegin
+            let jbegin = (a:first + ((cnt+1)<0?cnt+1:cnt) )
         endif
     endif
-
-    if g:Join_debug
+    "
+    if g:Join_debug"{{{
         echom '---------------------'
         echom 'calculated firstline:'.jbegin
         echom 'calculated lastline:' . jend
         echom 'join keep :' . joinKeep
         echom 'join rev :' . joinRev
         echom '---------------------'
-    endif
-
+    endif"}}}
+    
+    
+    let jbegin = jbegin < 0 ? 0 : jbegin
+    let jend = jend >= line('$') ? line('$') : jend
+    
     "now load lines
     let lines = getline(jbegin, jend)
 
@@ -65,7 +68,12 @@ fun! s:DoJoin(sep, bang, count, flag, first, last)
         execute jbegin . ',' . jend . 'd'
         call append(jbegin>0 ? jbegin-1 : 0, join(joinRev?reverse(lines):lines, a:sep))	
     else
-        call setline(jbegin>0? jbegin : 0, join(joinRev?reverse(lines):lines, a:sep))
+        if cnt>=0
+            call setline(jbegin, join(joinRev?reverse(lines):lines, a:sep))
+        else
+            call setline(jend, join(joinRev?reverse(lines):lines, a:sep))
+        endif
+
     endif
     
 endf
@@ -172,4 +180,4 @@ command! -nargs=* -range -bang  Join <line1>,<line2>call s:Join(<q-args>, <bang>
 command! -nargs=* -range -bang  J <line1>,<line2>call s:Join(<q-args>, <bang>0)
 
 
-" vim: ts=4:sw=4:ft=vim:expandtab
+" vim: ts=4:sw=4:ft=vim:expandtab:fdm=marker
