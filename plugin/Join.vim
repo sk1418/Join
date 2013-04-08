@@ -160,7 +160,7 @@ fun! s:ParseArgs(argstr)
         throw 'err_arg_num'
     elseif ln == 1
         if s:IsCount(cfList[0])
-            let c = cfList[0]
+            let c     = cfList[0]
         elseif s:IsFlag(cfList[0])
             let flags = cfList[0]
         else
@@ -191,8 +191,8 @@ fun! s:Join(argstr, bang) range
     endtry	
 
     let args['first'] = a:firstline
-    let args['last'] = a:lastline
-    let args['bang'] = a:bang
+    let args['last']  = a:lastline
+    let args['bang']  = a:bang
     call s:DoJoin( args['sep'], args['bang'], args['count'], args['flags'], args['first'], args['last'])
 endf
 
