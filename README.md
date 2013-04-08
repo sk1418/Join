@@ -49,4 +49,4 @@ some short explanation: (detailed command description please check `:h Join`)
 todo
 
 
- vim:ft=markdown:ts=2:sw=2:ts=2:fdm=marker:expandtab
+ vim:ft=markdown:sw=2:ts=2:fdm=marker:expandtab
