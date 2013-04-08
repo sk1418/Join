@@ -36,7 +36,7 @@ let s:errMsgsDict['err_arg_cf']  = '[JoinErr:ARG] Argument Count or Flags is inv
 "------------------------------------
 " Do the join logic here
 "------------------------------------
-fun! s:DoJoin(sep, bang, count, flag, first, last)
+fun! <SID>DoJoin(sep, bang, count, flag, first, last)
     if g:Join_debug"{{{
         echom '---------------------'
         echom 'parsed sep:'   . a:sep
@@ -107,14 +107,14 @@ endf
 "------------------------------------
 "check if an input is Count argument
 "------------------------------------
-fun! s:IsCount(inputCount)
+fun! <SID>IsCount(inputCount)
     return a:inputCount =~ '^-\?[1-9]\d*$'
 endf
 
 "------------------------------------
 "check if an input string is flags argument
 "------------------------------------
-fun! s:IsFlag(inputFlags)
+fun! <SID>IsFlag(inputFlags)
     let flagReg = '['. join(s:FLAGS,'') .']'
     if empty(a:inputFlags) || len(a:inputFlags) > len(s:FLAGS)
         return 0
@@ -131,7 +131,7 @@ endf
 " argstr should follow format [sep] [count] [flags]
 " for example 'I am sep' 20 kr
 "------------------------------------
-fun! s:ParseArgs(argstr)
+fun! <SID>ParseArgs(argstr)
     let rest  = a:argstr
     let c     = 0
     let sep   = " "
@@ -182,7 +182,7 @@ fun! s:ParseArgs(argstr)
 endf
 
 
-fun! s:Join(argstr, bang) range
+fun! <SID>Join(argstr, bang) range
     try
         let args = s:ParseArgs(a:argstr)
     catch /^err/
@@ -197,13 +197,13 @@ fun! s:Join(argstr, bang) range
 endf
 
 
-fun! s:ShowErrMsg(errKey)
+fun! <SID>ShowErrMsg(errKey)
     echohl Error
     echon  s:errMsgsDict[a:errKey]
     echohl None
 endf
-command! -nargs=* -range -bang  Join <line1>,<line2>call s:Join(<q-args>, <bang>0)
-command! -nargs=* -range -bang  J <line1>,<line2>call s:Join(<q-args>, <bang>0)
+command! -nargs=* -range -bang  Join <line1>,<line2>call <SID>:Join(<q-args>, <bang>0)
+command! -nargs=* -range -bang  J <line1>,<line2>call <SID>:Join(<q-args>, <bang>0)
 
 
 " vim: ts=4:sw=4:ft=vim:expandtab:fdm=marker
