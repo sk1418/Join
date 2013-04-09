@@ -47,8 +47,8 @@ Short explanation: (detailed command description please check `:h Join`)
 - `range` follows Vim's range definition
 - `separator` must be the 1st argument, and could be any string. It must be quoted by `"` or `'`, depends on if an escaped special character is required.
 - the order of last two argument: count and flags are free. e.g `:Join 5 rk` and `:Join rk 5`, both are valid.
-- Count could be negative 
-- there are two flags:
+- `count` could be negative number. In this case **Join** will do backwards join.
+- `flags` :
  
 		r : join lines reversely
 		k : don't remove joined line after join
