@@ -154,6 +154,7 @@ fun! <SID>ParseArgs(argstr)
         endif
     endif
 
+    let rest   = substitute(rest,' \+', " ","g")
     let cfList = split(rest, " ") "count flag list
     let ln     = len(cfList)
     if ln > 2
