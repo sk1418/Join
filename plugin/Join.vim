@@ -203,7 +203,5 @@ fun! <SID>ShowErrMsg(errKey)
     echohl None
 endf
 command! -nargs=* -range -bang  Join <line1>,<line2>call <SID>Join(<q-args>, <bang>0)
-command! -nargs=* -range -bang  J <line1>,<line2>call <SID>Join(<q-args>, <bang>0)
-
 
 " vim: ts=4:sw=4:ft=vim:expandtab:fdm=marker

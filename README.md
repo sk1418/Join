@@ -27,7 +27,8 @@ todo
 
 ##Usage
 
-**Join** plugin defined two commands: `:J` and `:Join`.  They do exactly same job. `:J` is just a short form of command `:Join`
+**Join** plugin defines only one command: `:Join`.  If there is no other customer command (by other plugins maybe) starts with `J`, `:J` is also available for `:Join` 
+
 so the command format is:
 
 		:[range]Join[!] [separator] [count] [flags]
