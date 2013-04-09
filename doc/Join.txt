@@ -1,0 +1,247 @@
+*Join.txt*  A more powerful line join command in vim
+
+		       __      _          __
+		      / /___  (_)___     / /
+		 __  / / __ \/ / __ \   / / 
+		/ /_/ / /_/ / / / / /  /_/  
+		\____/\____/_/_/ /_/  (_)  
+		
+	        -Do better Join in vim
+
+Author:  Kai Yuan (kent.yuan at gmail dot com)
+
+This plugin requires Vim 7.3 or later.
+
+==============================================================================
+Help on using Join
+
+1. Introduction .......................... |Join-intro| 
+2. Usage ................................. |Join-usage| 
+3. Examples .............................. |Join-examples|
+
+==============================================================================
+1. INTRODUCTION                                                *Join-intro*
+
+|Join| provides more powerful line join features than the build-in |:join|. 
+
+Features:
+
+Except for all features provided by the build-in |:join| command, |Join| can: 
+
+    - |Join| lines with separator (any string)
+    - |Join| lines with leading and trailing whitespaces trimmed
+    - |Join| lines with negative Count
+    - |Join| lines with reversely
+    - |Join| lines and keep joined lines (without removing)
+    - |Join| lines with any combinations of above options
+
+==============================================================================
+2. USAGE                                              *:J* *:Join* *Join-usage*
+
+This plugin has defined only one command: |:Join||. If there is no other
+customer command (by other plugins maybe) starting with "J", |:J| is also
+available for |:Join|. 
+
+The command format is:
+
+:[range]Join[!] [separator] [count] [flags]
+		
+Arguments description:
+    
+    - [range] follows the rule of |cmdline-ranges|
+    - [!](bang) if with "!" all leading and trailing whitespaces of joined lines
+    will be trimed.
+    - [count] Join [count] lines starting with [range]. If [count] is negative
+    number, join [count] lines backwards. Check |Join-range-count| or
+    |Join-negative-count|
+    - [flags] Two flags are available: 
+        r : join lines reversely 
+        k : don't remove joined line after join
+
+Argument rules:
+
+    - [separator] must be the first argument also must be quoted by '(single
+        quote) or "(double quote)
+    - The order of [count] and [flags] is free. For example the following two
+    commands have exactly same meaning: >
+      :J 5 kr
+      :J kr 5
+<      
+    - all arguments are optional. If an argument was given by user, the default
+    value will be used:
+
+        ========================
+        arg      | Default value
+        ========================
+        range    | current line 
+        count    | 1            
+        !(bang)  | ""           
+        separator| " "          
+        flags    | ""           
+        ------------------------
+
+                                        *Join-negative-count* *Join-range-count*
+
+If [count] is negative. |Join| will join lines backwards. For example:
+
+before: >
+
+    aa
+    bb
+    cc
+    dd* (* indicates cursor)
+    ee
+
+After executing command >
+  :J -3
+
+    aa
+    bb cc dd
+    ee*
+
+If [range] is crossing multiple lines, with [count] together, |Join| will do in
+this way:
+
+    if [count] > 0, the largest line number in [range] will be the base, and join
+    [count] lines
+
+    if [count] < 0, the smallest line number in [range] will be the base, and
+    join abs([count]) lines backwards
+
+check |Join-examples| for detail.
+
+==============================================================================
+3. Examples                                                     *Join-examples*
+
+More examples with screenshots can be found at https://github.com/sk1418/Join
+
+(* indicates cursor in example)
+
+Original file: >
+
+    1
+    2
+    3
+    4
+    5*
+    6
+    7
+    8
+    9
+    10
+
+- with [separator] and [count] >
+
+   :J ', ' 3
+
+result >
+
+    1
+    2
+    3
+    4
+    5, 6, 7
+    8*
+    9
+    10
+
+
+- with [separator], [count] and [flag] r  >
+
+ :J '-' 3 r
+
+result >
+
+    1
+    2
+    3
+    4
+    7-6-5
+    8*
+    9
+    10
+
+- with [separator], [count] and [flag] k >
+
+ :J '-' 3 k
+
+result >
+
+    1
+    2
+    3
+    4
+    *5-6-7
+    6
+    7
+    8
+    9
+    10
+
+
+- with negative [count] >
+
+ :J -3
+
+result >
+
+    1
+    2
+    3 4 5
+    6*
+    7
+    8
+    9
+    10
+
+
+- with special [separator], negative [count] and [flag] kr >
+
+ :J "'\"\t" -3 kr
+
+result >
+
+    1
+    2
+    3
+    4
+    5'"	4'"	3
+    6*
+    7
+    8
+    9
+    10
+
+
+- with [range] and [count] >
+
+ :2,5J 3
+
+result >
+    1
+    2
+    3
+    4
+    5 6 7
+    8*
+    9
+    10
+
+- with [range], negative [count] and [flag] k >
+
+ :5,7J -3 k
+
+result >
+
+    1
+    2
+    3
+    4
+    *3 4 5
+    6
+    7
+    8
+    9
+    10
+ 
+ vim:ft=help:ts=2:tw=80:shiftwidth=2:tabstop=2:fdm=marker:expandtab
