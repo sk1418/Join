@@ -60,8 +60,9 @@ Arguments description:
 
 Argument rules:
 
-    - [separator] must be the first argument also must be quoted by '(single
-        quote) or "(double quote)
+    - Arguments should be separated by space
+    - If [separator] occurence, it must be the first argument also must be
+    quoted by '(single quote) or "(double quote)
     - The order of [count] and [flags] is free. For example the following two
     commands have exactly same meaning: >
       :J 5 kr
