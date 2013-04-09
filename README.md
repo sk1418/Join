@@ -50,8 +50,8 @@ Short explanation: (detailed command description please check `:h Join`)
 - `count` could be negative number. In this case **Join** will do backwards join.
 - `flags` :
  
-		r : join lines reversely
-		k : don't remove joined line after join
+		r : (reverse) join lines reversely
+		k : (keep) don't remove joined line after join
 
 - If you don't give `[separator]` and `[flags]` also give only positive `[count]`, the `:Join` works as same as build-in `:join`
 

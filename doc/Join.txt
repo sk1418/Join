@@ -55,8 +55,8 @@ Arguments description:
     number, join [count] lines backwards. Check |Join-range-count| or
     |Join-negative-count|
     - [flags] Two flags are available: 
-        r : join lines reversely 
-        k : don't remove joined line after join
+        r : (reverse) join lines reversely 
+        k : (keep) don't remove joined line after join
 
 Argument rules:
 
