@@ -44,14 +44,14 @@ Short explanation: (detailed command description please check `:h Join`)
         flags    | ""           
         ------------------------
 
-- range follows Vim's range definition
-- separator must be the 1st argument, and could be any string. It must be quoted by `"` or `'`, depends on if an escaped special character is required. (todo <tab> example)
-- the order of last two argument: count and flags are free
+- `range` follows Vim's range definition
+- `separator` must be the 1st argument, and could be any string. It must be quoted by `"` or `'`, depends on if an escaped special character is required.
+- the order of last two argument: count and flags are free. e.g `:Join 5 rk` and `:Join rk 5`, both are valid.
 - Count could be negative 
-- flags there are two flags:
+- there are two flags:
  
 		r : join lines reversely
-		k : don't move joined line after join
+		k : don't remove joined line after join
 
 - If you don't give `[separator]` and `[flags]` also give only positive `[count]`, the `:Join` works as same as build-in `:join`
 
@@ -59,7 +59,7 @@ Short explanation: (detailed command description please check `:h Join`)
 
 **For detailed explainations, please check `:h Join`**
 
-After      |command & description                                                        |After
+Before     |command & description                                                        |After
 ---        |---                                                                          |---
 ![][before]|`:J ', ' 3`<br/>Join with:<br/>`sep`<br/>`count`                             |![][after01]
 ![][before]|`:J '-' 3 r`<br/>Join with:<br/>`sep`<br/>`count`<br/>`reverse`              |![][after02]
