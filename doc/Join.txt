@@ -31,12 +31,12 @@ Except for all features provided by the build-in |:join| command, |Join| can:
     - |Join| lines with separator (any string)
     - |Join| lines with leading and trailing whitespaces trimmed
     - |Join| lines with negative Count
-    - |Join| lines with reversely
+    - |Join| lines in reverse
     - |Join| lines and keep joined lines (without removing)
     - |Join| lines with any combinations of above options
 
 ==============================================================================
-2. USAGE                                              *:J* *:Join* *Join-usage*
+2. USAGE                                               *:J* *:Join* *Join-usage*
 
 This plugin has defined only one command: |:Join||. If there is no other
 customer command (by other plugins maybe) starting with "J", |:J| is also
@@ -55,7 +55,7 @@ Arguments description:
     number, join [count] lines backwards. Check |Join-range-count| or
     |Join-negative-count|
     - [flags] Two flags are available: 
-        r : (reverse) join lines reversely 
+        r : (reverse) join lines in reverse
         k : (keep) don't remove joined line after join
 
 Argument rules:
@@ -245,4 +245,4 @@ result >
     9
     10
  
- vim:ft=help:ts=2:tw=80:shiftwidth=2:tabstop=2:fdm=marker:expandtab
+ vim:ft=help:ts=2:tw=78:shiftwidth=2:tabstop=2:fdm=marker:expandtab
