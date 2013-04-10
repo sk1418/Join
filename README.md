@@ -27,7 +27,9 @@ Except for all features provided by the build-in `:join` command, **Join** can:
 
 >If you are impatient, move your eyes down to the **Examples and Screenshots** section. :)
 
-**Join** plugin defines only one command: `:Join`.  If there is no other customer command (by other plugins maybe) starts with `J`, `:J` is also available for `:Join`. The command format is:
+**Join** plugin defines only one command: `:Join`.  If there is no other customer command (by other plugins maybe) starts with `J`, `:J` is also available for `:Join`. 
+
+The command format is:
 
     :[range]Join[!] [separator] [count] [flags]
 		
@@ -44,6 +46,7 @@ Short explanation: (detailed command description please check `:h Join`)
         flags    | ""           
         ------------------------
 
+- all given arguments must be separated by space
 - `range` follows Vim's range definition
 - `separator` must be the 1st argument, and could be any string. It must be quoted by `"` or `'`, depends on if an escaped special character is required.
 - the order of last two argument: count and flags are free. e.g `:Join 5 rk` and `:Join rk 5`, both are valid.
