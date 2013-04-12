@@ -18,7 +18,7 @@ Except for all features provided by the build-in `:join` command, **Join** can:
 
 - **Join** lines with separator (string)
 - **Join** lines with leading and trailing whitespaces trimmed
-- **Join** lines with negative count
+- **Join** lines with negative count (backwards join)
 - **Join** lines in reverse
 - **Join** lines and keep joined lines (without removing)
 - **Join** lines with any combinations of above options
