@@ -68,7 +68,7 @@ Argument rules:
       :J 5 kr
       :J kr 5
 <      
-    - all arguments are optional. If an argument was given by user, the default
+    - all arguments are optional. If an argument was not given by user, the default
     value will be used:
 
         ========================
