@@ -29,7 +29,7 @@ Features:
 Except for all features provided by the build-in |:join| command, |Join| can: 
 
     - |Join| lines with separator (any string)
-    - |Join| lines with leading and trailing whitespaces trimmed
+    - |Join| lines with or without trimming the leading whitespaces
     - |Join| lines with negative count (backwards join)
     - |Join| lines in reverse
     - |Join| lines and keep joined lines (without removing)
@@ -49,8 +49,8 @@ The command format is:
 Arguments description:
     
     - [range] follows the rule of |cmdline-ranges|
-    - [!](bang) if with "!" all leading and trailing whitespaces of joined lines
-    will be trimed.
+    - [!](bang) if with "!" all leading and trailing whitespaces of joined
+    lines will be kept
     - [count] Join [count] lines starting with [range]. If [count] is negative
     number, join [count] lines backwards. Check |Join-range-count| or
     |Join-negative-count|
