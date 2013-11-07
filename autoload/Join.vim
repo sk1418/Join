@@ -213,7 +213,7 @@ function! Join#Join(argstr, bang) range
 	let args['first'] = a:firstline
 	let args['last']  = a:lastline
 	let args['bang']  = a:bang
-	call Joine#do_join( args['sep'], args['bang'], args['count'], args['flags'], args['first'], args['last'])
+	call Join#do_join( args['sep'], args['bang'], args['count'], args['flags'], args['first'], args['last'])
 endfunction
 
 
