@@ -18,9 +18,10 @@ Help on using Join
 1. Introduction .......................... |Join-intro| 
 2. Usage ................................. |Join-usage| 
 3. Examples .............................. |Join-examples|
+4. ChangeLo .............................. |Join-changelog|
 
 ==============================================================================
-1. INTRODUCTION                                                *Join-intro*
+INTRODUCTION                                                *Join-intro*
 
 |Join| provides more powerful line join features than the build-in |:join|. 
 
@@ -36,7 +37,7 @@ Except for all features provided by the build-in |:join| command, |Join| can:
     - |Join| lines with any combinations of above options
 
 ==============================================================================
-2. USAGE                                               *:J* *:Join* *Join-usage*
+USAGE                                               *:J* *:Join* *Join-usage*
 
 This plugin has defined only one command: |:Join||. If there is no other
 customer command (by other plugins maybe) starting with "J", |:J| is also
@@ -112,7 +113,7 @@ this way:
 check |Join-examples| for detail.
 
 ==============================================================================
-3. Examples                                                     *Join-examples*
+EXAMPLES                                                     *Join-examples*
 
 More examples with screenshots can be found at https://github.com/sk1418/Join
 
@@ -245,4 +246,14 @@ result >
     9
     10
  
- vim:ft=help:ts=2:tw=78:shiftwidth=2:tabstop=2:fdm=marker:expandtab
+==============================================================================
+CHANGELOG                                                     *Join-changelog*
+
+version 1.0.1  2013-11-07~
+- move vim codes to autoload
+- rename function names
+
+version 1.0.0  2013-04-09~
+- init release
+
+ vim:ft=help:ts=2:tw=78:shiftwidth=2:fdm=marker:expandtab
