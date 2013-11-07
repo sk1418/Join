@@ -71,7 +71,7 @@ Argument rules:
 <      
     - all arguments are optional. If an argument was not given by user, the default
     value will be used:
-
+>
         ========================
         arg      | Default value
         ========================
@@ -81,7 +81,7 @@ Argument rules:
         separator| " "          
         flags    | ""           
         ------------------------
-
+<
                                         *Join-negative-count* *Join-range-count*
 
 If [count] is negative. |Join| will join lines backwards. For example:
