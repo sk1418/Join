@@ -77,17 +77,17 @@ Before     |command & description                                               
 ![][before]|`:5,7J -3`<br/>Join with:<br/>`range`<br/>negative `count`                   |![][after11]
 
 
-[before]: https://lh3.googleusercontent.com/-IXqp1V2h_HA/UWQCFc4bRAI/AAAAAAAAGxs/mqcm1khN1gU/s352/Join_before.png
-[after01]: https://lh4.googleusercontent.com/-DqvfdX6MCiU/UWQCDsP5E7I/AAAAAAAAGxs/2WnuKdgC80M/s352/Join_01after.png
-[after02]: https://lh4.googleusercontent.com/-hw8IC-YmIhE/UWQCDgj5wjI/AAAAAAAAGxs/ezX_2JTfIi4/s352/Join_02after.png
-[after03]: https://lh3.googleusercontent.com/-7guzDaZG0w8/UWQCDnx04PI/AAAAAAAAGxs/2gf4vfUlgNo/s352/Join_03after.png
-[after04]: https://lh4.googleusercontent.com/-1IJjBlWyESs/UWQCDy7cYQI/AAAAAAAAGxs/eySzhoe58SA/s352/Join_04after.png
-[after05]: https://lh6.googleusercontent.com/-2Cf0bxmAQTo/UWQCECkBcXI/AAAAAAAAGxs/KtJW73eSvCs/s352/Join_05after.png
-[after06]: https://lh4.googleusercontent.com/-x7oZd6beZzw/UWQCELjXSwI/AAAAAAAAGxs/dG7zZmXEUb0/s352/Join_06after.png
-[after07]: https://lh3.googleusercontent.com/-72riJu4013M/UWQCErpQAII/AAAAAAAAGxs/TdVE93p6m4I/s352/Join_07after.png
-[after08]: https://lh5.googleusercontent.com/-5G5cqY0uOp0/UWQCEmXmtTI/AAAAAAAAGxs/z7bE07FkhcU/s352/Join_08after.png
-[after09]: https://lh6.googleusercontent.com/-LLHPh8cdWAI/UWQCEjf_34I/AAAAAAAAGxs/9obzpaHeS7c/s352/Join_09after.png
-[after10]: https://lh3.googleusercontent.com/-NVj0xyquocE/UWQCFDTidPI/AAAAAAAAGxs/yesHmMVAfrk/s363/Join_10after.png
-[after11]: https://lh4.googleusercontent.com/-xORvSXkcDl4/UWQCFTdqpYI/AAAAAAAAGxs/E_X6z9Ij7O4/s363/Join_11after.png
+[before]: https://raw.github.com/sk1418/sharedResources/master/Join/Join_before.png
+[after01]: https://raw.github.com/sk1418/sharedResources/master/Join/Join_01after.png
+[after02]: https://raw.github.com/sk1418/sharedResources/master/Join/Join_02after.png
+[after03]: https://raw.github.com/sk1418/sharedResources/master/Join/Join_03after.png
+[after04]: https://raw.github.com/sk1418/sharedResources/master/Join/Join_04after.png
+[after05]: https://raw.github.com/sk1418/sharedResources/master/Join/Join_05after.png
+[after06]: https://raw.github.com/sk1418/sharedResources/master/Join/Join_06after.png
+[after07]: https://raw.github.com/sk1418/sharedResources/master/Join/Join_07after.png
+[after08]: https://raw.github.com/sk1418/sharedResources/master/Join/Join_08after.png
+[after09]: https://raw.github.com/sk1418/sharedResources/master/Join/Join_09after.png
+[after10]: https://raw.github.com/sk1418/sharedResources/master/Join/Join_10after.png
+[after11]: https://raw.github.com/sk1418/sharedResources/master/Join/Join_11after.png
 
- vim:ft=markdown:sw=2:ts=2:fdm=marker:expandtab
+ vim: ft=markdown sw=2 ts=2 fdm=marker expandtab
