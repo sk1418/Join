@@ -10,6 +10,8 @@
 
 ##Join
 
+(http://www.vim.org/scripts/script.php?script_id=4516)
+
 **Join** provides more powerful line join features than the build-in `:join`.
 
 ##Features
