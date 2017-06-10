@@ -8,13 +8,13 @@
 		
 	        -Do better Join in vim
 
-##Join
+## Join
 
 (http://www.vim.org/scripts/script.php?script_id=4516)
 
 **Join** provides more powerful line join features than the build-in `:join`.
 
-##Features
+## Features
 
 Except for all features provided by the build-in `:join` command, **Join** can:
 
@@ -25,7 +25,7 @@ Except for all features provided by the build-in `:join` command, **Join** can:
 - **Join** lines and keep joined lines (without removing joined lines)
 - **Join** lines with any combinations of above options
 
-##Usage
+## Usage
 
 >If you are impatient, move your eyes down to the **Examples and Screenshots** section. :)
 
@@ -60,7 +60,7 @@ Short explanation: (detailed command description please check `:h Join`)
 
 - If you don't give `[separator]` and `[flags]` also give only positive `[count]`, the `:Join` works as same as build-in `:join`
 
-##Examples & Screenshots
+## Examples & Screenshots
 
 **For detailed explainations, please check `:h Join`**
 
